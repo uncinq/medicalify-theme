@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "@uncinq/component-tokens": "^1.14.0",
-    "@uncinq/css-base": "^1.14.0",
+    "@uncinq/css-base": "^1.12.0",
     "@uncinq/css-components": "^1.22.1",
     "@uncinq/design-tokens": "^1.10.0"
   }

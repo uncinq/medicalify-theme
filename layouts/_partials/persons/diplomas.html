@@ -1,6 +1,0 @@
-{{- with .Params.diplomas }}
-<section class="diplomas">
-  <h2>{{ i18n "diplomas.label" 2 }}</h2>
-  {{ partial "func/PrepareHTML.html" . | markdownify }}
-</section>
-{{- end }}

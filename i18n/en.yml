@@ -3,10 +3,6 @@ admin:
     doctolib:
       label: Doctolib
       hint: Doctolib URL (https://doctolib.fr/…)
-    diplomas:
-      label: 
-        one: Diploma
-        other: Diplomas
     schema_type:
       options:
         MedicalOrganization: "Medical organization"
@@ -42,7 +38,3 @@ contact:
   doctolib: 
     label: Doctolib
     booking: Book an appointment <i>on Doctolib</i>
-diplomas:
-  label: 
-    one: Diploma
-    other: Diplomas

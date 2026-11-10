@@ -1,10 +1,10 @@
-{{- /* hugolify-theme-persons' sidebar, opened by the diplomas and holding the
-       expertises, which persons/content.html leaves out. */ -}}
+{{- /* hugolify-theme-persons' sidebar, also holding the expertises, which
+       persons/content.html leaves out. */ -}}
 {{- $persons_expertises := "persons/persons_expertises.html" }}
 {{- $persons_awards := "persons/persons_awards.html" }}
 {{- $persons_places := "persons/persons_places.html" }}
 <div class="sidebar" {{- partial "func/SetAnim.html" (dict "element" "sidebar") }}>
-  {{- partial "persons/diplomas.html" . }}
+  {{- partial "persons/education.html" . }}
   {{- if templates.Exists ( printf "_partials/%s" $persons_expertises ) }}
     {{- partial $persons_expertises . }}
   {{- end }}

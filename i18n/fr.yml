@@ -3,10 +3,6 @@ admin:
     doctolib:
       label: Doctolib
       hint: Lien Doctolib (https://doctolib.fr/…)
-    diplomas:
-      label: 
-        one: Diplôme
-        other: Diplômes
     schema_type:
       options:
         MedicalOrganization: "Organisation de santé"
@@ -42,8 +38,4 @@ contact:
   doctolib: 
     label: Doctolib
     booking: Prendre rendez-vous <i>sur Doctolib</i>
-diplomas:
-  label: 
-    one: Diplôme
-    other: Diplômes
       

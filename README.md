@@ -33,6 +33,25 @@ imports:
   - path: github.com/hugolify/hugolify-theme
 ```
 
+## Upgrading a site from v1
+
+The diplomas of a person moved from the theme's own `diplomas` field, a block of markdown, to hugolify-admin's `education` field, a list the core theme also publishes as structured data (`hasCredential`, `alumniOf`). hugolify-theme-persons lists them at the top of the sidebar of the person page, under its own heading ("Formations" in French). Convert each person's front matter by hand:
+
+```yml
+# v1
+diplomas: >-
+  * 2010 - D.E.S.C. Chirurgie orthopédique – Université Bordeaux Segalen
+
+# v2
+education:
+  - title: D.E.S.C. Chirurgie orthopédique
+    school: Université Bordeaux Segalen
+    year: 2010
+    category: degree # or certificate
+```
+
+Each entry is one diploma: a position held or the summary of a thesis belongs in the body of the page. A `diplomas` key left in place is no longer shown, nor editable in the CMS.
+
 ## Design tokens
 
 The design-system layer is authored as [DTCG](https://www.designtokens.org/) token files under `assets/tokens/theme/` and compiled to custom properties with [Style Dictionary](https://styledictionary.com/):
