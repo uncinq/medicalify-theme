@@ -1,0 +1,45 @@
+{{/* GetSchemaTypesTheme
+     The schema.org types of the health professions, added to the generic ones
+     of hugolify-theme, see func/GetSchemaTypes.html there.
+
+     Most descend from MedicalBusiness, a LocalBusiness: a practice, a clinic,
+     a pharmacy, a specialty. MedicalOrganization, DiagnosticLab and
+     VeterinaryCare do not — schema.org makes them organizations only, which
+     have an address but no coordinates.
+
+     The public health types — CommunityHealth, Emergency, PrimaryCare,
+     PublicHealth — are left out: no practice declares them.
+*/}}
+{{- $localBusiness := slice
+  "MedicalBusiness"
+  "MedicalClinic"
+  "Hospital"
+  "Physician"
+  "PhysiciansOffice"
+  "IndividualPhysician"
+  "Dentist"
+  "Pharmacy"
+  "Nursing"
+  "Midwifery"
+  "Physiotherapy"
+  "Podiatric"
+  "DietNutrition"
+  "Ophthalmology"
+  "Optician"
+  "Optometric"
+  "Audiology"
+  "Otolaryngologic"
+  "Dermatology"
+  "Gynecologic"
+  "Obstetric"
+  "Pediatric"
+  "Geriatric"
+  "Psychiatric"
+  "Oncologic"
+  "PlasticSurgery"
+-}}
+
+{{- return (dict
+  "organization" ((slice "MedicalOrganization") | append $localBusiness | append (slice "DiagnosticLab" "VeterinaryCare"))
+  "local_business" $localBusiness
+) -}}

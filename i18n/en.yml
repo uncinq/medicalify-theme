@@ -7,6 +7,37 @@ admin:
       label: 
         one: Diploma
         other: Diplomas
+    schema_type:
+      options:
+        MedicalOrganization: "Medical organization"
+        MedicalBusiness: "Health practice"
+        MedicalClinic: "Clinic, medical center"
+        Hospital: "Hospital"
+        Physician: "Physician"
+        PhysiciansOffice: "Doctor’s office"
+        IndividualPhysician: "Physician in individual practice"
+        Dentist: "Dentist"
+        Pharmacy: "Pharmacy"
+        Nursing: "Nursing"
+        Midwifery: "Midwifery"
+        Physiotherapy: "Physiotherapy"
+        Podiatric: "Podiatry"
+        DietNutrition: "Dietetics and nutrition"
+        Ophthalmology: "Ophthalmology"
+        Optician: "Optician"
+        Optometric: "Optometry"
+        Audiology: "Audiology"
+        Otolaryngologic: "Ear, nose and throat"
+        Dermatology: "Dermatology"
+        Gynecologic: "Gynecology"
+        Obstetric: "Obstetrics"
+        Pediatric: "Pediatrics"
+        Geriatric: "Geriatrics"
+        Psychiatric: "Psychiatry"
+        Oncologic: "Oncology"
+        PlasticSurgery: "Plastic surgery"
+        DiagnosticLab: "Diagnostic laboratory"
+        VeterinaryCare: "Veterinary practice"
 contact:
   doctolib: 
     label: Doctolib
