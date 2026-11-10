@@ -52,6 +52,15 @@ education:
 
 Each entry is one diploma: a position held or the summary of a thesis belongs in the body of the page. A `diplomas` key left in place is no longer shown, nor editable in the CMS.
 
+## Structured data
+
+The theme adds the schema.org types of the health professions to the generic ones of hugolify-theme, through `layouts/_partials/func/GetSchemaTypesTheme.html`:
+
+- local businesses, which take coordinates: `MedicalBusiness`, `MedicalClinic`, `Hospital`, `Physician`, `PhysiciansOffice`, `IndividualPhysician`, `Dentist`, `Pharmacy`, `Nursing`, `Midwifery`, `Physiotherapy`, `Podiatric`, `DietNutrition`, `Ophthalmology`, `Optician`, `Optometric`, `Audiology`, `Otolaryngologic`, `Dermatology`, `Gynecologic`, `Obstetric`, `Pediatric`, `Geriatric`, `Psychiatric`, `Oncologic`, `PlasticSurgery`
+- organizations only, with an address but no coordinates: `MedicalOrganization`, `DiagnosticLab`, `VeterinaryCare`
+
+The public health types (`CommunityHealth`, `Emergency`, `PrimaryCare`, `PublicHealth`) are left out: no practice declares them. Hugolify admin offers the others for the organization, under *Config › Structured data*, and for each place. A site that defines its own hook replaces this list, see [Structured data](https://www.hugolify.io/docs/customization/structured-data/#types).
+
 ## Design tokens
 
 The design-system layer is authored as [DTCG](https://www.designtokens.org/) token files under `assets/tokens/theme/` and compiled to custom properties with [Style Dictionary](https://styledictionary.com/):
