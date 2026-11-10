@@ -1,0 +1,23 @@
+{
+  "doctolib": {
+    "color": {
+      "background": {
+        "default": {
+          "$value": "oklch(56.7% 0.149 248.7)",
+          "$type": "color",
+          "$description": "$doctolib #127ac9, Doctolib's own blue: the booking button keeps it whatever the brand."
+        },
+        "hover": {
+          "$value": "oklch(48.7% 0.145 252.2)",
+          "$type": "color",
+          "$description": "$doctolib-hover #0360ae."
+        }
+      },
+      "text": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "$white."
+      }
+    }
+  }
+}

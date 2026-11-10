@@ -1,0 +1,10 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* theme/components/doctolib.css */
+@layer tokens {
+  :root {
+    --doctolib-color-background: oklch(56.7% 0.149 248.7);
+    --doctolib-color-background-hover: oklch(48.7% 0.145 252.2);
+    --doctolib-color-text: var(--color-white);
+  }
+}

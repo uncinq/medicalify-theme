@@ -1,0 +1,12 @@
+/* theme/components/contact-list.css */
+/*
+ * The Doctolib entry of a contact list, see commons/contact/contacts.html: a
+ * button, set apart from the lines above and never cut short like them.
+ */
+@layer components {
+  .contact-list .doctolib {
+    margin-block-start: var(--spacing-xs);
+    overflow: visible;
+    white-space: normal;
+  }
+}

@@ -1,9 +1,13 @@
+{{- /* hugolify-theme's contact card, also shown when the contact holds
+       nothing but a Doctolib link. */ -}}
 {{ with .Params.contact }}
-    <aside class="contact-list"{{ partial "func/SetAnim.html" (dict "element" "content") }}>
-      <div>
+  {{ if or .email .phone .fax .socials .doctolib }}
+    <aside class="card contact-card" {{- partial "func/SetAnim.html" (dict "element" "content") }}>
+      <div class="content">
         {{ partial "commons/contact/title.html" . }}
         {{ partial "commons/contact/contacts.html" . }}
         {{ partial "commons/contact/socials.html" . }}
       </div>
     </aside>
+  {{ end }}
 {{ end }}

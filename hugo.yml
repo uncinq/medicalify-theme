@@ -9,16 +9,15 @@ module:
     - source: static
       target: static
 
+# _merge: deep on every map that already exists upstream (in hugolify-theme or
+# in a section module): what follows adds to those maps instead of standing in
+# for them, so the keys this theme leaves alone keep their default.
 params:
-  persons:
-    thumbnail:
-      desktop: 306x398
-      mobile: 306x398
-      scrollsnap: 240x312
-    image:
-      desktop: 636x800
-      mobile: 360x240
+
+  # Admin
   admin:
+    title: "Medicalify CMS"
+
     fields:
       contact:
         fields:
@@ -26,3 +25,16 @@ params:
           - phone
           - doctolib
           - socials
+
+  # Image: portrait cards
+  persons:
+    _merge: deep
+    thumbnail:
+      _merge: deep
+      desktop: 306x398
+      mobile: 306x398
+      scrollsnap: 240x312
+    image:
+      _merge: deep
+      desktop: 636x800
+      mobile: 360x240

@@ -1,6 +1,14 @@
+{{- /* The fields of hugolify-admin's persons collection, with the diplomas of
+       a practitioner (admin/fields/diplomas.yml, shown in their sidebar by
+       persons/diplomas.html) in place of education. Keep the rest in step with
+       admin/collections/fields/persons.fields.default.html there. */ -}}
+{{- $persons_awards := false -}}
 {{- $persons_statutes := false -}}
 {{- $persons_expertises := false -}}
 {{- $persons_places := false -}}
+{{- if site.Params.admin.collections.awards.enable -}}
+  {{- $persons_awards = dict "relation" (dict "collection" "awards" "name" "persons_awards" "multiple" true) -}}
+{{- end -}}
 {{- if site.Params.admin.collections.persons_statutes.enable -}}
   {{- $persons_statutes = dict "relation" (dict "collection" "persons_statutes" "multiple" false) -}}
 {{- end -}}
@@ -11,18 +19,27 @@
   {{- $persons_places = dict "relation" (dict "collection" "places" "name" "persons_places" "multiple" true) -}}
 {{- end -}}
 
-{{- return slice 
-  "id" 
-  "is_not_index" 
-  "draft" 
-  "title_page" 
+{{/* The title of a person page is their name, it does not get translated, and
+  it is computed from the first and last name wherever the CMS supports it. */}}
+{{- return slice
+  "id"
+  "is_not_index"
+  "draft"
+  (dict "title_page" (dict "i18n" "duplicate" "compute" "{{fields.firstname}} {{fields.lastname}}"))
+  "firstname"
+  "lastname"
   "description"
-  "featured_image" 
+  "featured_image"
   $persons_statutes
   $persons_expertises
   $persons_places
+  $persons_awards
+  "languages"
   "contact"
   "diplomas"
   "body"
+  "blocks"
+  "weight"
+  "seo"
   "slug"
   "no_index" -}}

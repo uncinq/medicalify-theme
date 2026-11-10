@@ -1,0 +1,16 @@
+/* theme.css */
+/*
+ * Medicalify for hugolify-theme-design-system.
+ *
+ * The design system imports "theme.css" last in its own css/main.css and ships
+ * an empty file under that name: this module is declared before it in
+ * module.yaml, so this file shadows that placeholder. The same goes for the
+ * generated tokens/theme.css.
+ *
+ * What lives here: only what the tokens cannot say.
+ */
+@import "./theme/components/btn-doctolib.css";
+@import "./theme/components/contact-list.css";
+@import "./theme/components/diplomas.css";
+@import "./theme/components/person.css";
+@import "./theme/pages/person.css";

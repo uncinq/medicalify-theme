@@ -1,0 +1,10 @@
+/* theme/components/person.css */
+/*
+ * The persons module maps every --item-* of a person card onto its --person-*
+ * tokens but the media ratio: this one follows person.media.ratio too.
+ */
+@layer components {
+  .person {
+    --item-media-ratio: var(--person-media-ratio);
+  }
+}

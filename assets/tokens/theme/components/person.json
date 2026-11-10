@@ -1,0 +1,29 @@
+{
+  "person": {
+    "border": {
+      "radius": {
+        "$value": "{radius.none}",
+        "$type": "dimension"
+      }
+    },
+    "media": {
+      "border": {
+        "radius": {
+          "$value": "{radius.none}",
+          "$type": "dimension",
+          "$description": "The persons module rounds the portrait into a circle; in Medicalify it is a plain photo."
+        }
+      },
+      "maxWidth": {
+        "$value": "100%",
+        "$type": "dimension",
+        "$description": "The persons module caps the portrait at 100px; in Medicalify it fills the card, see the thumbnail sizes in hugo.yml."
+      },
+      "ratio": {
+        "$value": "2 / 3",
+        "$type": "string",
+        "$description": "--bs-aspect-ratio: 150% in the Bootstrap layer. The 306x398 thumbnails of hugo.yml are cropped to it."
+      }
+    }
+  }
+}

@@ -1,20 +1,43 @@
-{{- $items := slice
-  (dict "type" "phone" "value" .phone)
-  (dict "type" "fax" "value" .fax)
-  (dict "type" "email" "value" .email)
-  (dict "type" "doctolib" "value" .doctolib)
-}}
-{{- $contacts := slice }}
-{{- range $items }}
-  {{- if .value }}
-    {{- $contacts = $contacts | append . }}
+{{- /*
+  hugolify-theme's list of contact details, with a Doctolib booking button
+  last (commons/contact/doctolib.html). Keep the rest in step with
+  commons/contact/contacts.html there.
+
+  @context {map} . The contact object.
+*/ -}}
+{{- if or .phone .fax .email .doctolib }}
+{{- $vcard := false }}
+{{- with page }}
+  {{- $hook := printf "%s/contact/vcard.html" .Type }}
+  {{- if templates.Exists (printf "_partials/%s" $hook) }}
+    {{- $vcard = partial $hook . }}
   {{- end }}
 {{- end }}
-
-{{- with $contacts }}
-  <ul>
-    {{- range . }}
-      <li class="{{ .type}}">{{ partial (printf "commons/contact/%s.html" .type) .value }}</li>
-    {{- end }}
-  </ul>
+<ul class="contact-list">
+  {{- with .phone }}
+    <li class="phone">
+      {{ partial "commons/contact/phone.html" . }}
+    </li>
+  {{- end }}
+  {{- with .fax }}
+    <li class="fax">
+      {{ partial "commons/contact/fax.html" . }}
+    </li>
+  {{- end }}
+  {{- with .email }}
+    <li class="email">
+      {{ partial "commons/contact/email.html" . }}
+    </li>
+  {{- end }}
+  {{- with $vcard }}
+    <li class="vcard">
+      {{- partial "commons/contact/vcard.html" . -}}
+    </li>
+  {{- end }}
+  {{- with .doctolib }}
+    <li class="doctolib">
+      {{ partial "commons/contact/doctolib.html" . }}
+    </li>
+  {{- end }}
+</ul>
 {{- end }}

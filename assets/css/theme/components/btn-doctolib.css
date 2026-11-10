@@ -1,0 +1,66 @@
+/* theme/components/btn-doctolib.css */
+/*
+ * The Doctolib booking button, see commons/contact/doctolib.html: Doctolib's
+ * blue, its logo in white standing for the "on Doctolib" of the label, which
+ * stays for screen readers only. Outlined when it follows another button.
+ * Usage: <a class="btn btn-doctolib"><span>Book <i>on Doctolib</i></span></a>
+ *
+ * The hero colours every button of its content with the brand (.hero-content
+ * .btn in the design system's components/hero.css), the contact card of a
+ * person included: the colours restate that context to win there too.
+ */
+@layer components {
+  .btn-doctolib,
+  .hero-content .btn-doctolib {
+    --btn-color-background: var(--doctolib-color-background);
+    --btn-color-background-hover: var(--doctolib-color-background-hover);
+    --btn-color-border: var(--doctolib-color-background);
+    --btn-color-border-hover: var(--doctolib-color-background-hover);
+    --btn-color-text: var(--doctolib-color-text);
+    --btn-color-text-hover: var(--doctolib-color-text);
+  }
+
+  .btn + .btn-doctolib,
+  .hero-content .btn + .btn-doctolib {
+    --btn-color-background: transparent;
+    --btn-color-text: var(--doctolib-color-background);
+  }
+
+  .btn-doctolib {
+    align-items: center;
+
+    /* The logo, 80x20 like the SVG, white on the blue */
+    &::before {
+      background: url('/assets/images/logo-doctolib.svg') no-repeat center / contain;
+      content: '';
+      filter: brightness(0) invert(1);
+      flex-shrink: 0;
+      height: 20px;
+      width: 80px;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: filter var(--duration-fast) var(--easing);
+      }
+    }
+
+    i {
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    /* Outlined: the logo keeps its blue until the button fills */
+    .btn + & {
+      &::before {
+        filter: none;
+      }
+
+      &:is(:hover, :focus-visible, :active)::before {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
