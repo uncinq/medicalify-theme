@@ -4,11 +4,11 @@
 
      Most descend from MedicalBusiness, a LocalBusiness: a practice, a clinic,
      a pharmacy, a specialty. MedicalOrganization, DiagnosticLab and
-     VeterinaryCare do not — schema.org makes them organizations only, which
+     VeterinaryCare do not: schema.org makes them organizations only, which
      have an address but no coordinates.
 
-     The public health types — CommunityHealth, Emergency, PrimaryCare,
-     PublicHealth — are left out: no practice declares them.
+     The public health types (CommunityHealth, Emergency, PrimaryCare,
+     PublicHealth) are left out: no practice declares them.
 */}}
 {{- $localBusiness := slice
   "MedicalBusiness"
