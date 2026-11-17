@@ -1,0 +1,43 @@
+{{- /*
+  hugolify-theme's list of contact details, with a Doctolib booking button
+  last (commons/contact/doctolib.html). Keep the rest in step with
+  commons/contact/contacts.html there.
+
+  @context {map} . The contact object.
+*/ -}}
+{{- if or .phone .fax .email .doctolib }}
+{{- $vcard := false }}
+{{- with page }}
+  {{- $hook := printf "%s/contact/vcard.html" .Type }}
+  {{- if templates.Exists (printf "_partials/%s" $hook) }}
+    {{- $vcard = partial $hook . }}
+  {{- end }}
+{{- end }}
+<ul class="contact-list">
+  {{- with .phone }}
+    <li class="phone">
+      {{ partial "commons/contact/phone.html" . }}
+    </li>
+  {{- end }}
+  {{- with .fax }}
+    <li class="fax">
+      {{ partial "commons/contact/fax.html" . }}
+    </li>
+  {{- end }}
+  {{- with .email }}
+    <li class="email">
+      {{ partial "commons/contact/email.html" . }}
+    </li>
+  {{- end }}
+  {{- with $vcard }}
+    <li class="vcard">
+      {{- partial "commons/contact/vcard.html" . -}}
+    </li>
+  {{- end }}
+  {{- with .doctolib }}
+    <li class="doctolib">
+      {{ partial "commons/contact/doctolib.html" . }}
+    </li>
+  {{- end }}
+</ul>
+{{- end }}

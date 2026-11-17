@@ -1,0 +1,6 @@
+/* theme.css: barrel, do not edit */
+
+/* theme */
+@import "./theme/components/doctolib.css";
+@import "./theme/components/person.css";
+@import "./theme/semantic/color.css";

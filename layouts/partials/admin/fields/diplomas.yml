@@ -1,6 +1,0 @@
-{{- $args := dict 
-  "label" (i18n "admin.fields.diplomas.label")
-  "name" "diplomas"
-  -}}
-
-{{ partial "admin/widgets/markdown.js" $args }}

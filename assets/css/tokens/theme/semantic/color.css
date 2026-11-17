@@ -1,0 +1,11 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* theme/semantic/color.css */
+@layer tokens {
+  :root {
+    --color-brand: oklch(48.5% 0.146 252.7);
+    --color-brand-hover: oklch(42% 0.13 252.7);
+    --color-brand-muted: oklch(92% 0.035 252.7);
+    --color-brand-strong: oklch(30% 0.1 252.7);
+  }
+}

@@ -1,0 +1,25 @@
+/* theme/pages/person.css */
+/*
+ * A person page from the tablet up: the portrait on the left half, the content
+ * and the sidebar stacked on the right half. The portrait spans a third row
+ * that takes the extra height, so the sidebar stays right under the content.
+ */
+@layer pages {
+  .page-persons {
+    @media (--tablet) {
+      .grid {
+        grid-template-rows: auto auto 1fr;
+
+        .featured-image,
+        .content,
+        .sidebar {
+          --grid-column: span calc(var(--columns) / 2);
+        }
+
+        .featured-image {
+          grid-row: 1 / span 3;
+        }
+      }
+    }
+  }
+}
