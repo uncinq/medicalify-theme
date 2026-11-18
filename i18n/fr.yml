@@ -38,4 +38,5 @@ contact:
   doctolib: 
     label: Doctolib
     booking: Prendre rendez-vous <i>sur Doctolib</i>
-      
+credit:
+  hugolify: un site éco-conçu produit avec <a href="https://www.medicalify.io" target="_blank" rel="noopener noreferrer" title="« Medicalify » - lien externe">Medicalify</a>

@@ -38,3 +38,5 @@ contact:
   doctolib: 
     label: Doctolib
     booking: Book an appointment <i>on Doctolib</i>
+credit:
+  hugolify: a low impact website crafted with <a href="https://www.medicalify.io" target="_blank" rel="noopener noreferrer" title="« Medicalify » - external link">Medicalify</a>
