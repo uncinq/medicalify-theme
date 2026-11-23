@@ -6,11 +6,14 @@
   @context {map} . The contact object.
 */ -}}
 {{- if or .phone .fax .email .doctolib }}
+{{- $contact := . }}
 {{- $vcard := false }}
 {{- with page }}
-  {{- $hook := printf "%s/contact/vcard.html" .Type }}
-  {{- if templates.Exists (printf "_partials/%s" $hook) }}
-    {{- $vcard = partial $hook . }}
+  {{- if eq $contact .Params.contact }}
+    {{- $hook := printf "%s/contact/vcard.html" .Type }}
+    {{- if templates.Exists (printf "_partials/%s" $hook) }}
+      {{- $vcard = partial $hook . }}
+    {{- end }}
   {{- end }}
 {{- end }}
 <ul class="contact-list">
